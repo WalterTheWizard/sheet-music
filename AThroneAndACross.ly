@@ -5,11 +5,15 @@ tenorOne = \relative c' {
   \clef tenor
   \numericTimeSignature
   \time 4/4
+  \aikenHeads
   a8 e8 f8 b4 b4 
 }
 
 tenorTwo = \relative c' {
   \voiceTwo
+  \clef tenor 
+  \numericTimeSignature
+  \time 4/4
   a8 e8 f8 b4 \stemUp d,4 
 }
 
