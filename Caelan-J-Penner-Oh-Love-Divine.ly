@@ -3,15 +3,16 @@
 \header {
   title = "Oh, Love Divine"
   composer = "Caelan J Penner"
+  poet = "Caelan J Penner" 
+  copyright = "© 2026 Caelan J Penner"
   tagline = ##f
-}
+
+} 
 
 
-% ============================================================
-% WOMEN — UPPER VOICE
-% ============================================================
+% soprano
 
-womenUpper = {
+soprano = {
   \voiceOne
   \key e \major
   \aikenHeads
@@ -26,6 +27,15 @@ womenUpper = {
   cis''8 
   b'4. 
   r8
+  e'4.
+  gis'8
+  a'8
+  b'4. 
+  gis'4 
+  gis'8
+  fis'8
+  fis'4
+  r4
 }
 
 
@@ -34,7 +44,7 @@ womenUpper = {
 % This voice has its OWN rhythm.
 % ============================================================
 
-womenLower = {
+alto = {
   \voiceTwo
   \key e \major
   \time 4/4
@@ -49,6 +59,15 @@ womenLower = {
   a'8
   gis'4.
   r8
+  cis'4. 
+  e'8
+  fis'8
+  fis'8( gis'4)
+  e'4
+  e'8
+  dis'8
+  dis'4
+  r4
   
 }
 
@@ -57,9 +76,19 @@ womenLower = {
 % ============================================================
 
 words = \lyricmode {
-  Oh, Lord I need Your grace a- -- gain 
+  Oh, Lord I need Your grace a -- gain,
+  for I have fal -- len in -- to sin 
 }
 
+wordstwo = \lyricmode {
+  The road is rough, Dark is the night,
+  Please bless me with Your Ho -- ly  Light
+}
+
+wordsthree = \lyricmode {
+  You'll ne -- ver fail me this I know,
+  Be -- cause the Bi -- ble tells me so 
+}
 % ============================================================
 % MEN
 % ============================================================
@@ -69,16 +98,11 @@ menMusic = {
   \time 4/4
   \aikenHeads
 
-  gis4. 
-  b8
-  b8
-  e'4. 
-  e'4 
-  e'8
-  e'8
-  e'4. 
-  r8 
-}
+  gis4. b8 b8 e'4. 
+  e'4 e'8 e'8 e'4. r8 
+  a4. b8 b8 b4.
+  b4 b8 b8 b4 r4
+  }
 
 
 
@@ -95,16 +119,23 @@ menMusic = {
     \new Staff <<
       \clef treble
 
-      \new Voice = "womenUpper" {
-        \womenUpper
+      \new Voice = "soprano" {
+        \soprano
       }
 
       \new Voice = "womenLower" {
-        \womenLower
+        \alto
       }
 
-      \new Lyrics \lyricsto "womenUpper" {
+      \new Lyrics \lyricsto "soprano" {
         \words
+      }
+      
+      \new Lyrics \lyricsto "soprano"{
+        \wordstwo
+      }
+      \new Lyrics \lyricsto "soprano"{
+        \wordsthree
       }
     >>
 
@@ -122,4 +153,5 @@ menMusic = {
   >>
 
   \layout { }
+
 }
